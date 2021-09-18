@@ -4,4 +4,4 @@
 
 ### I have created a card flip memory game using plain HTML, CSS and JavaScript.
 
-### Link to game : 
+### Link to game : https://anshika1806.github.io/CardFlip_Game/
