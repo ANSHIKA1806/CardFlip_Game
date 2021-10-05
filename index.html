@@ -81,7 +81,7 @@
 
       body {
         /* Background pattern from Subtle Patterns */
-        background: url('img/bkg.jpg');
+        background: url('img/5591276.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         font-family: 'Open Sans', sans-serif;
@@ -100,7 +100,7 @@
         margin-top: 0.5em;
       }
 
-      ul > li {
+      li {
         list-style: none;
       }
 
@@ -113,7 +113,7 @@
         border-radius: 2em;
         border: none;
         color: #fff;
-        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+        box-shadow: 5px 2px 20px 0 rgba(103, 112, 121, 0.5);
         padding: 2em;
       }
       /*----------------------------------
@@ -254,16 +254,22 @@
         width: 35em;
       }
 
-      .deck,
-      .card {
-        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+      .tilt {
+        perspective: 10rem;
+      }
+
+      .deck {
+        background: white;
+        box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+          0 15px 40px rgba(166, 173, 201, 0.2);
       }
 
       .card {
-        background: #43b538;
         border-radius: 0.5em;
         height: 7em;
         width: 7em;
+        box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+          0 15px 40px rgba(166, 173, 201, 0.2);
       }
       /*
     To disable the color highlight if and img is clicked
@@ -272,7 +278,7 @@
 
       img {
         user-select: none;
-        width: 6em;
+        width: 4rem;
       }
 
       .deck img {
@@ -280,27 +286,30 @@
       }
 
       .deck .card.flip {
-        background: #fff;
+        /* background: #fff; */
         cursor: default;
-        transform: rotateY(180deg);
-        transition: transform 0.3s linear;
         pointer-events: none;
       }
 
+      .flip {
+        transition: transform 0.3s linear; 
+      }
+
       .flip img {
-        background: #fff;
+        /* background: white; */
         visibility: visible;
+        height: 100%;
       }
 
       .deck .card.match {
-        background: #0aff99;
+        /* background: #0aff99; */
         visibility: visible;
         cursor: default;
         animation: pulse 1s;
       }
 
       .match img {
-        background: #0aff99;
+        /* background: #0aff99; */
       }
 
       h4 {
@@ -452,7 +461,39 @@
           // Add an alt tag to the image
           addImage.setAttribute('alt', 'image of vault boy from fallout');
           // Update the new <li> to the deck <ul>
-          deck.appendChild(liTag);
+
+          const divTag = document.createElement('DIV');
+          divTag.classList.add('tilt');
+          divTag.appendChild(liTag);
+
+          updateReflection(liTag, 100, 0);
+          liTag.addEventListener('mousemove', (event) => {
+            console.log("Mouse Moved")
+            const scale = 0.03;
+            const midX = (liTag.clientHeight / 2) * scale;
+            const mouseXoffset = event.offsetX * scale;
+            const mouseX = mouseXoffset - midX;
+
+            const midY = (liTag.clientWidth / 2) * scale;
+            const mouseYoffset = event.offsetY * scale;
+            const mouseY = mouseYoffset - midY;
+            updateReflection(liTag, mouseX * 50, mouseY * 50);
+            const rotation = `rotateX(${mouseY}deg) rotateY(${mouseX}deg)`;
+            liTag.style.transform = rotation;
+          });
+          
+          liTag.addEventListener('mouseleave', (event) => {
+            // liTag.style.transform = `rotateX(0deg) rotateY(0deg)`;
+          });
+          
+          // flip liTag on click
+          liTag.addEventListener('click', (event) => {
+            liTag.style.transform = `rotateX(0deg) rotateY(180deg)`;
+          });
+
+
+          deck.appendChild(divTag);
+          
         }
       }
 
@@ -640,8 +681,6 @@
 
       deck.addEventListener('click', function (evt) {
         if (evt.target.nodeName === 'LI') {
-          // To console if I was clicking the correct element
-          console.log(evt.target.nodeName + ' Was clicked');
           // Start the timer after the first click of one card
           // Executes the timer() function
           if (timeStart === false) {
@@ -680,6 +719,17 @@
         modal.style.display = 'none';
         resetEverything();
       });
+
+      // const cards = document.getElementsByClassName('card');
+
+      // Array.from(cards).forEach((card) => {
+        
+      // });
+
+      function updateReflection(card, degree, percentage) {
+        card.style.background = `linear-gradient(${degree}deg, rgba(240, 185, 113,0.4) 0%,rgba(240, 185, 113,0.6) ${percentage}%,rgba(240, 185, 113,0.4) 100%)`;
+        card.style.backgroundSize = 'cover';
+      }
     </script>
   </body>
-</html>
+</html
