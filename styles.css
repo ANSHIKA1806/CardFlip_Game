@@ -105,7 +105,7 @@ Section - Modal
 
 .modal {
   /*Hidden by default */
-  display: block;
+  display: none;
   position: fixed;
   z-index: 99;
   left: 0;
