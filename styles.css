@@ -252,6 +252,7 @@ img {
 
 h4 {
   width: 100%;
+  padding: 9px;
   background: black;
   color: white;
   text-align: center; /* center the title */
