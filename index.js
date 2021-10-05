@@ -72,7 +72,6 @@ function startGame() {
 
     updateReflection(liTag, 100, 0);
     liTag.addEventListener('mousemove', (event) => {
-      console.log('Mouse Moved');
       const scale = 0.03;
       const midX = (liTag.clientHeight / 2) * scale;
       const mouseXoffset = event.offsetX * scale;
@@ -118,12 +117,15 @@ function timer() {
     }
     // Update the timer in HTML with the time it takes the user to play the game
     timeCounter.innerHTML =
-      "<i class='fa fa-hourglass-start'></i>" +
-      ' Timer: ' +
-      minutes +
-      ' Mins ' +
-      seconds +
-      ' Secs';
+      minutes.toLocaleString('en-US', {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      }) +
+      ':' +
+      seconds.toLocaleString('en-US', {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      });
   }, 1000);
 }
 
@@ -137,8 +139,7 @@ function resetEverything() {
   timeStart = false;
   seconds = 0;
   minutes = 0;
-  timeCounter.innerHTML =
-    "<i class='fa fa-hourglass-start'></i>" + ' Timer: 00:00';
+  timeCounter.innerHTML = '00:00';
   // Reset star count and the add the class back to show stars again
   star[1].firstElementChild.classList.add('fa-star');
   star[2].firstElementChild.classList.add('fa-star');
@@ -248,7 +249,7 @@ function AddStats() {
   p[0].innerHTML =
     'Time to complete: ' + minutes + ' Minutes and ' + seconds + ' Seconds';
   p[1].innerHTML = 'Moves Taken: ' + moves;
-  p[2].innerHTML = 'Your Star Rating is: ' + starCount + ' out of 3';
+  p[2].innerHTML = 'Your Star Rating is: ' + starCount + '/3';
 }
 
 function displayModal() {
@@ -325,6 +326,6 @@ playAgain.addEventListener('click', function () {
 // });
 
 function updateReflection(card, degree, percentage) {
-  card.style.background = `linear-gradient(${degree}deg, rgba(240, 185, 113,0.4) 0%,rgba(240, 185, 113,0.6) ${percentage}%,rgba(240, 185, 113,0.4) 100%)`;
+  card.style.background = `linear-gradient(${degree}deg, rgba(23, 180, 109 ,0.6) 0%,rgba(23, 180, 109,0.8) ${percentage}%,rgba(23, 180, 109,0.7) 100%)`;
   card.style.backgroundSize = 'cover';
 }

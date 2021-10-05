@@ -3,16 +3,6 @@
   padding: 0;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html {
-  box-sizing: border-box;
-}
-
 body {
   /* Background pattern from Subtle Patterns */
   background: url('img/5591276.jpg');
@@ -39,7 +29,7 @@ li {
 }
 
 .card,
-.reset-btn {
+.btn {
   cursor: pointer;
 }
 
@@ -56,12 +46,12 @@ Header
 
 h1 {
   font-family: sans-serif;
-  font-size: 275px;
+  font-size: 40px;
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;
   text-align: center;
-  text-shadow: 2px 2px black;
+  margin-top: 1em;
 }
 p {
   font-size: 1.6em;
@@ -75,8 +65,14 @@ Section - Score Panel
 ------------------------------------*/
 
 .score-panel {
-  font-size: 2em;
-  padding: 1em 0 2em;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2rem 1rem 2rem;
+  align-items: center;
+  justify-content: space-around;
+  width: 20rem;
+  height: 20rem;
 }
 
 .star-rating > li {
@@ -84,25 +80,24 @@ Section - Score Panel
   padding: 0.5em;
 }
 
-.moves-counter {
-  padding: 0.2em;
-}
-
 .reset-btn {
-  background: #000;
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+  background: #1c9882;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .timer-container {
-  background: #fff;
+  background: rgb(255, 216, 209);
   border-radius: 0.5em;
   color: #000;
   margin: 0.5em;
-  padding: 0.5em;
+  padding: 0.5em 1em;
 }
 
-.timer {
-  font-size: 2em;
-}
 /*----------------------------------
 Section - Modal
 ------------------------------------*/
@@ -110,7 +105,7 @@ Section - Modal
 
 .modal {
   /*Hidden by default */
-  display: none;
+  display: block;
   position: fixed;
   z-index: 99;
   left: 0;
@@ -125,6 +120,7 @@ Section - Modal
 /* Modal Content/Box */
 
 .modal-content {
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,6 +148,10 @@ Section - Modal
 }
 /* Modal Image*/
 
+a {
+  color: rgb(255, 216, 209);
+  text-decoration: none;
+}
 .modal-img {
   display: inline-block;
   margin: 1em 0 1em;
@@ -168,7 +168,8 @@ p.stats:last-child {
 
 .play-again-btn {
   background: #28e;
-  margin-bottom: 1em;
+  margin: 2em 1em;
+  padding: 1em 2em;
 }
 /*----------------------------------
 Deck of Cards
@@ -176,34 +177,36 @@ Deck of Cards
 /*Mobile first responsivness*/
 
 .deck {
-  /* background: linear-gradient(to bottom,#1500ff, #38fcff,); */
+  background: linear-gradient(
+    75deg,
+    rgba(255, 214, 153, 1) 0%,
+    rgba(255, 248, 203, 1) 60%,
+    rgba(255, 218, 212, 1) 100%
+  );
+
   border-radius: 1.5em;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  height: 35em;
   margin-bottom: 6em;
   padding: 0.5em;
   width: 35em;
+  height: 35em;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
 .tilt {
   perspective: 10rem;
 }
 
-.deck {
-  background: white;
-  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
-    0 15px 40px rgba(166, 173, 201, 0.2);
-}
-
 .card {
   border-radius: 0.5em;
   height: 7em;
   width: 7em;
-  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
-    0 15px 40px rgba(166, 173, 201, 0.2);
+  box-shadow: 5px 0px 10px 4px rgba(158, 134, 140, 0.5);
 }
 /*
 To disable the color highlight if and img is clicked
@@ -240,6 +243,7 @@ img {
   visibility: visible;
   cursor: default;
   animation: pulse 1s;
+  animation-fill-mode: forwards;
 }
 
 .match img {
@@ -247,14 +251,16 @@ img {
 }
 
 h4 {
+  width: 100%;
+  background: black;
+  color: white;
   text-align: center; /* center the title */
   font-size: 20px; /* set the font size */
-  color: #f1efef; /* set the font color */
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    transform: rotateX(0deg) rotateY(180deg) scale(1);
   }
   80% {
     transform: scale(1.1);
@@ -321,5 +327,10 @@ Desktops
   }
   .play-again-btn {
     font-size: 2em;
+  }
+  .score-panel {
+    flex-direction: row;
+    width: 48rem;
+    height: auto;
   }
 }

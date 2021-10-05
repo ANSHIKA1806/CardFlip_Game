@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Memory Game</title>
   </head>
 
@@ -13,28 +14,27 @@
       <header class="header">
         <h1>Memory Game</h1>
       </header>
-      <section class="score-panel">
-        <h3>Score Panel</h3>
-        <ul id="star-rating" class="star-rating">
-          <li class="star"><i class="fa fa-star"></i></li>
-          <li class="star"><i class="fa fa-star"></i></li>
-          <li class="star"><i class="fa fa-star"></i></li>
-        </ul>
-        <span class="moves-counter">0</span> Moves
-        <div class="timer-container">
-          <span class="timer"
-            ><i class="fa fa-hourglass-start"></i> Timer: 00:00</span
-          >
-        </div>
-        <div class="reset">
-          <button class="btn reset-btn">
-            Reset <i class="fa fa-repeat"></i>
-          </button>
-        </div>
-      </section>
+      
       <!-- Modal section-->
 
       <section class="win-game-modal">
+        <section class="score-panel">
+          <div class="timer-container">
+            ⏱ <span class="timer"
+              >00:00</span
+            >
+          </div>
+          <ul id="star-rating" class="star-rating">
+            <li class="star"><i class="fa fa-star fa-lg"></i></li>
+            <li class="star"><i class="fa fa-star fa-lg"></i></li>
+            <li class="star"><i class="fa fa-star fa-lg"></i></li>
+          </ul>
+          <span class="moves-counter">0</span> 
+            Moves       
+          <button class="btn reset-btn">
+            <i class="fa fa-repeat"></i>
+          </button>
+        </section>
         <div id="modal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
