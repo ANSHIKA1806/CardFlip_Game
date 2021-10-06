@@ -8,7 +8,7 @@ This repository is open for contributions , you can comment on an issue to get a
 ```
 git clone --depth  https://github.com/<your_user_name>/CardFlip_Game.git
 ```
-3.Navigate to the project directory 
+3. Navigate to the project directory 
 ```
 cd CardFlip_Game
 ```
@@ -16,8 +16,8 @@ cd CardFlip_Game
 ``` 
 git checkout -b <branch_name>
 ```
-5.Create a new remote for the upstream repo.
-6.Make the changes in the project in your text editor.
+5. Create a new remote for the upstream repo.
+6. Make the changes in the project in your text editor.
 7. Track and commit your changes.
 8. Push your changes to the branch using the command:
 ``` 
