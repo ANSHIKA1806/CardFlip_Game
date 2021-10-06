@@ -96,6 +96,7 @@ Section - Score Panel
   color: #000;
   margin: 0.5em;
   padding: 0.5em 1em;
+  box-shadow: 10px 10px 28px -11px rgba(0, 0, 0, 0.75);
 }
 
 /*----------------------------------
