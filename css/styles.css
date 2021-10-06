@@ -77,6 +77,10 @@ ul>li {
     padding: 2em;
 
 }
+.btn:hover{
+    background-color: white;
+    color: #2288ee;
+}
 
 /*----------------------------------
 Header
