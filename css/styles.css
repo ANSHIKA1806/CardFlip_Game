@@ -89,7 +89,7 @@ h1 {
     letter-spacing: -1px;
     line-height: 1;
     text-align: center;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px rgb(65, 64, 64);
 }
 
 p {
@@ -119,7 +119,17 @@ Section - Score Panel
 }
 
 .reset-btn {
-    background: #000;
+  background: #000000;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 100ms linear;
+}
+
+.reset-btn:hover {
+  transform: scale(1.05);
 }
 
 .timer-container {
