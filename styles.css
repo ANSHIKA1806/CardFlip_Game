@@ -5,10 +5,10 @@
 
 body {
   /* Background pattern from Subtle Patterns */
-  background: url('img/5591276.jpg');
+  background: url("img/5591276.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   /*one Em roughly ten pixels (16 x 62.5% = 10)*/
   font-size: 62.5%;
   letter-spacing: 1.5px;
@@ -186,16 +186,28 @@ Deck of Cards
 
   border-radius: 1.5em;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  justify-items: center;
   margin-bottom: 6em;
   padding: 0.5em;
   width: 35em;
   height: 35em;
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(166, 173, 201, 0.2);
+}
+
+.easy {
+  grid-template-columns: 1fr 1fr;
+}
+
+.medium {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hard {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .tilt {
