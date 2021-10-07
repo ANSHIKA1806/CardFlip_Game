@@ -7,6 +7,7 @@
 
 ## 📷 Screenshots.
 <p align= "center"><img src="https://user-images.githubusercontent.com/51878265/135973305-a92150bc-c839-4845-b4aa-deaea8b8456e.png" width="683" height="384"></p>
+<p align= "center"><img src="https://user-images.githubusercontent.com/71388350/136440690-85b114a3-fa63-479a-86da-2546e44546c6.png" width="683" height="384"></p>
 
 <p align= "center"><img src="https://user-images.githubusercontent.com/51878265/135973314-821db357-367d-4a17-a453-554a159b9460.png" width="683" height="384"></p>
 
