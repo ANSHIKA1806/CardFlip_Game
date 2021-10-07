@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Memory Game</title>
-</head>
+    <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico"/>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header class="header">
-            <h1>Memory Game</h1>
-        </header>
-        <section class="score-panel">
-            <h3>Score Panel</h3>
-            <ul id="star-rating" class="star-rating">
-                <li class="star"><i class="fa fa-star"></i></li>
-                <li class="star"><i class="fa fa-star"></i></li>
-                <li class="star"><i class="fa fa-star"></i></li>
-            </ul>
-            <span class="moves-counter">0</span> Moves
-            <div class="timer-container">
-                <span class="timer"><i class="fa fa-hourglass-start"></i> Timer: 00:00</span>
-            </div>
-            <div class="reset">
-                <button class="btn reset-btn">Reset <i class="fa fa-repeat"></i></button>
-            </div>
-        </section>
-        <!-- Modal section-->
+      <header class="header">
+        <h1>Memory Game</h1>
+      </header>
 
-        <section class="win-game-modal">
-            <div id="modal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Congratulations!</h2>
-                    <p>You have won the game and found all 8 pairs of cards.</p>
-                    <img class="modal-img" src="img/thumb_up.jpg" alt="Vault boy giving the thumbs up from the game fall out">
-                    <button class="btn play-again-btn">Play Again?</button>
-                </div>
+      <!--Start modal section-->
+      <section class="start-game-modal">
+        <div id="start-modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <h2>Welcome!</h2>
+            <p>Choose the game mode</p>
+            <div class="modal-content-options">
+              <button class="btn play-again-btn" id="easyGame">Easy</button>
+              <button class="btn play-again-btn" id="mediumGame">Medium</button>
+              <button class="btn play-again-btn" id="hardGame">Hard</button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal section-->
+
+      <section class="win-game-modal">
+        <section class="score-panel">
+          <div class="timer-container">⏱ <span class="timer">00:00</span></div>
+          <ul id="star-rating" class="star-rating">
+            <li class="star"><i class="fa fa-star fa-lg"></i></li>
+            <li class="star"><i class="fa fa-star fa-lg"></i></li>
+            <li class="star"><i class="fa fa-star fa-lg"></i></li>
+          </ul>
+          <span>
+            <span class="moves-counter">0</span>
+            Moves
+          </span>
+          <button class="btn reset-btn">
+            <i class="fa fa-repeat"></i>
+          </button>
         </section>
 
         <ul class="deck"></ul>
@@ -669,4 +678,35 @@
 
 </body>
 
+        <div id="modal" class="modal win">
+          <!-- Modal content -->
+          <div class="modal-content" id="win-modal-content">
+            <span class="close">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You have won the game and found all pairs of cards.</p>
+            <img
+              class="modal-img"
+              src="img/thumb_up.jpg"
+              alt="Vault boy giving the thumbs up from the game fall out"
+            />
+            <button class="btn play-again-btn" id="play-again">
+              Play Again?
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <ul class="deck"></ul>
+      <h4>
+        Made by<a
+          id="maker"
+          href="https://www.linkedin.com/in/anshika-singh-589922164/"
+          target="_blank"
+        >
+          &copy; Anshika 🌸</a
+        >
+      </h4>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
 </html>
