@@ -1,137 +1,102 @@
-@-moz-document url-prefix() {
-
-    /* Disable scrollbar Firefox */
-    html {
-        scrollbar-width: none;
-    }
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-::-webkit-scrollbar-button {
-    display: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    -ms-overflow-style: none;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-}
-
-body {
-    /* Background pattern from Subtle Patterns */
-    background: url('/img/bkg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: "Open Sans", sans-serif;
-    /*one Em roughly ten pixels (16 x 62.5% = 10)*/
-    font-size: 62.5%;
-    letter-spacing: 1.5px;
-    margin: 0;
-    text-align: center;
+  /* Background pattern from Subtle Patterns */
+  background: url("../img/5591276.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Open Sans", sans-serif;
+  /*one Em roughly ten pixels (16 x 62.5% = 10)*/
+  font-size: 62.5%;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-align: center;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 0.5em;
-    min-height: 100vh; /* Remove whitespace under page by setting container height to full view height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0.5em;
 }
 
-ul>li {
-    list-style: none;
+li {
+  list-style: none;
 }
 
 .card,
-.reset-btn {
-    cursor: pointer;
+.btn {
+  cursor: pointer;
 }
 
 .btn {
-    border-radius: 2em;
-    border: none;
-    color: #fff;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-    padding: 2em;
-
+  border-radius: 2em;
+  border: none;
+  color: #fff;
+  box-shadow: 5px 2px 20px 0 rgba(103, 112, 121, 0.5);
+  padding: 2em;
 }
-
 /*----------------------------------
 Header
 ------------------------------------*/
 
 h1 {
-    font-family: sans-serif;
-    font-size: 2em; /* Mobile first font size */
-    font-weight: bold;
-    letter-spacing: -1px;
-    line-height: 1;
-    text-align: center;
-    text-shadow: 2px 2px black;
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+  margin-top: 1em;
 }
-
 p {
-    font-size: 1.6em;
+  font-size: 1.6em;
 }
 
 h3 {
-    font-weight: 400;
+  font-weight: 400;
 }
-
 /*----------------------------------
 Section - Score Panel
 ------------------------------------*/
 
 .score-panel {
-    font-size: 2em;
-    padding: 1em 0 2em;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 2rem 1rem 2rem;
+  align-items: center;
+  justify-content: space-around;
+  width: 20rem;
+  height: 20rem;
 }
 
-.star-rating>li {
-    display: inline-block;
-    padding: 0.5em;
-}
-
-.moves-counter {
-    padding: 0.2em;
+.star-rating > li {
+  display: inline-block;
+  padding: 0.5em;
 }
 
 .reset-btn {
-    background: #000;
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+  background: #1c9882;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .timer-container {
-    background: #fff;
-    border-radius: 0.5em;
-    color: #000;
-    margin: 0.5em;
-    padding: 0.5em;
-}
-
-.timer {
-    font-size: 2em;
+  background: rgb(255, 216, 209);
+  border-radius: 0.5em;
+  color: #000;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  box-shadow: 10px 10px 28px -11px rgba(0, 0, 0, 0.75);
 }
 
 /*----------------------------------
@@ -140,250 +105,242 @@ Section - Modal
 /* Modal (background) */
 
 .modal {
-    /*Hidden by default */
-    display: none;
-    position: fixed;
-    z-index: 99;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    /* Fallback color */
-    background-color: rgb(46, 61, 73);
-    /* With opacity */
-    background-color: rgba(46, 61, 73, 0.6);
+  /*Hidden by default */
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* Fallback color */
+  background-color: rgb(46, 61, 73);
+  /* With opacity */
+  background-color: rgba(46, 61, 73, 0.6);
 }
-
 /* Modal Content/Box */
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    /* 5% from the top and centered */
-    margin: 5% auto;
-    border: 0.8em solid #43b538;
-    padding-right: 2em;
-    width: 80%;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  /* 5% from the top and centered */
+  margin: 5% auto;
+  border: 0.8em solid #43b538;
+  padding-right: 2em;
+  width: 80%;
 }
-
 /* The Close Button */
 
 .close {
-    align-self: flex-end;
-    color: #28e;
-    font-size: 5em;
+  align-self: flex-end;
+  color: #28e;
+  font-size: 5em;
 }
 
 .close:hover,
 .close:focus {
-    color: #5cf;
-    text-decoration: none;
-    cursor: pointer;
+  color: #5cf;
+  text-decoration: none;
+  cursor: pointer;
 }
-
 /* Modal Image*/
 
+a {
+  color: rgb(255, 216, 209);
+  text-decoration: none;
+}
 .modal-img {
-    display: inline-block;
-    margin: 1em 0 1em;
-    width: 20em;
+  display: inline-block;
+  margin: 1em 0 1em;
+  width: 20em;
 }
 
 p.stats {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 p.stats:last-child {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .play-again-btn {
-    background: #28e;
-    margin-bottom: 1em;
+  background: #28e;
+  margin: 2em 1em;
+  padding: 1em 2em;
 }
-
 /*----------------------------------
 Deck of Cards
 ------------------------------------*/
 /*Mobile first responsivness*/
 
 .deck {
-    /* background: linear-gradient(to bottom,#1500ff, #38fcff,); */
-    border-radius: 1.5em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 35em;
-    margin-bottom: 6em;
-    padding: 0.5em;
-    width: 35em;
+  background: linear-gradient(
+    75deg,
+    rgba(255, 214, 153, 1) 0%,
+    rgba(255, 248, 203, 1) 60%,
+    rgba(255, 218, 212, 1) 100%
+  );
+
+  border-radius: 1.5em;
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 6em;
+  padding: 0.5em;
+  width: 35em;
+  height: 35em;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
 }
 
-.deck,
+.easy {
+  grid-template-columns: 1fr 1fr;
+}
+
+.medium {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hard {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tilt {
+  perspective: 10rem;
+}
+
 .card {
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  border-radius: 0.5em;
+  height: 7em;
+  width: 7em;
+  box-shadow: 5px 0px 10px 4px rgba(158, 134, 140, 0.5);
 }
-
-.card {
-    background: #43b538;
-    border-radius: 0.5em;
-    height: 7em;
-    width: 7em;
-}
-
 /*
 To disable the color highlight if and img is clicked
 https://stackoverflow.com/questions/21107439/disable-or-change-firefoxs-element-image-highlight-color
 */
 
 img {
-    user-select: none;
-    width: 6em;
+  user-select: none;
+  width: 4rem;
 }
 
 .deck img {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .deck .card.flip {
-    background: #fff;
-    cursor: default;
-    transform: rotateY(180deg);
-    transition: transform 0.3s linear;
-    pointer-events: none;
+  /* background: #fff; */
+  cursor: default;
+  pointer-events: none;
+}
+
+.flip {
+  transition: transform 0.3s linear;
 }
 
 .flip img {
-    background: #fff;
-    visibility: visible;
+  /* background: white; */
+  visibility: visible;
+  height: 100%;
 }
 
 .deck .card.match {
-    background: #0aff99;
-    visibility: visible;
-    cursor: default;
-    animation: pulse 1s;
-}
-
-.match img {
-    background: #0aff99;
+  /* background: #0aff99; */
+  visibility: visible;
+  cursor: default;
+  animation: pulse 1s;
+  animation-fill-mode: forwards;
 }
 
 h4 {
-    text-align: center;
-    /* center the title */
-    font-size: 20px;
-    /* set the font size */
-    color: rgb(46, 61, 73);
-    /* set the font color */
+  width: 100%;
+  padding: 9px;
+  background: black;
+  color: white;
+  text-align: center; /* center the title */
+  font-size: 20px; /* set the font size */
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    80% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@media screen and (max-width: 550px){
-    /*
-    For Small devices, fix footer at bottom
-    */
-    .footer{
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      height: initial;
-    }
+  0% {
+    transform: rotateX(0deg) rotateY(180deg) scale(1);
   }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 @media screen and (min-width: 550px) {
-    .header h1 {
-        /* Set font size to half of font size in desktop devices for medium screens */
-        font-size: 3em;
-      }
-
-    .deck {
-        height: 50em;
-        padding: 2em;
-        width: 50em;
-    }
-
-    .card {
-        height: 10em;
-        width: 10em;
-    }
-
-    .deck img {
-        width: 9em;
-    }
-
-    .modal-content h2 {
-        font-size: 4em;
-    }
-
-    .play-again-btn {
-        font-size: 1.8em;
-    }
+  .deck {
+    height: 50em;
+    padding: 2em;
+    width: 50em;
+  }
+  .card {
+    height: 10em;
+    width: 10em;
+  }
+  .deck img {
+    width: 9em;
+  }
+  .modal-content h2 {
+    font-size: 4em;
+  }
+  .play-again-btn {
+    font-size: 1.8em;
+  }
 }
-
 /*----------------------------------
 Desktops
 ------------------------------------*/
 
 @media screen and (min-width: 800px) {
-    .header h1 {
-        /* Specify font size only for H1 inside header */
-        font-size: 6em;
-      }
-
-    p {
-        font-size: 2.3em;
-    }
-
-    .deck {
-        height: 70em;
-        width: 70em;
-    }
-
-    .card {
-        height: 15em;
-        width: 15em;
-    }
-
-    .deck img {
-        width: 13em;
-    }
-
-    .reset-btn {
-        font-size: 0.8em;
-    }
-
-    .footer {
-        font-size: 1.2em;
-    }
-
-    .modal-content h2 {
-        font-size: 5em;
-    }
-
-    /* Modal Image*/
-    .modal-img {
-        width: 30em;
-    }
-
-    .play-again-btn {
-        font-size: 2em;
-    }
+  h1 {
+    font-size: 6em;
+  }
+  p {
+    font-size: 2.3em;
+  }
+  .deck {
+    height: 70em;
+    width: 70em;
+  }
+  .card {
+    height: 15em;
+    width: 15em;
+  }
+  .deck img {
+    width: 13em;
+  }
+  .reset-btn {
+    font-size: 0.8em;
+  }
+  .footer {
+    font-size: 1.2em;
+  }
+  .modal-content h2 {
+    font-size: 5em;
+  }
+  /* Modal Image*/
+  .modal-img {
+    width: 30em;
+  }
+  .play-again-btn {
+    font-size: 2em;
+  }
+  .score-panel {
+    flex-direction: row;
+    width: 48rem;
+    height: auto;
+  }
 }
