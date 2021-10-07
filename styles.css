@@ -88,6 +88,11 @@ Section - Score Panel
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 100ms linear;
+}
+
+.reset-btn:hover {
+  transform: scale(1.05);
 }
 
 .timer-container {
