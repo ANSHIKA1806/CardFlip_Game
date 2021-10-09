@@ -348,4 +348,23 @@ Desktops
     width: 48rem;
     height: auto;
   }
+  #easyGame:hover{
+    width: 150px;
+    color: #19f006;
+    font-weight:bold;
+    font-size:2.1em;
+  }
+  #mediumGame:hover{
+    color: yellow;
+    width: 160px;
+    font-weight:bold;
+    font-size:2.1em;
+  }
+  #hardGame:hover{
+    width: 150px;
+    color: red;
+    font-weight: bold;
+    font-size:2.1em;
+  }
 }
+
