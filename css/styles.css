@@ -353,18 +353,21 @@ Desktops
     color: #19f006;
     font-weight:bold;
     font-size:2.1em;
+    box-shadow: 10px 10px 8px #888888;
   }
   #mediumGame:hover{
     color: yellow;
     width: 160px;
     font-weight:bold;
     font-size:2.1em;
+    box-shadow: 10px 10px 8px #888888;
   }
   #hardGame:hover{
     width: 150px;
     color: red;
     font-weight: bold;
     font-size:2.1em;
+    box-shadow: 10px 10px 8px #888888;
   }
 }
 
