@@ -1,10 +1,10 @@
 * {
   margin: 0;
-  padding: 0;  
+  padding: 0;
 }
 html
 {
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 body {
@@ -141,6 +141,12 @@ Section - Modal
   border: 0.8em solid #43b538;
   padding-right: 2em;
   width: 80%;
+  max-height: 96vh;
+  height: fit-content;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-61%);
 }
 /* The Close Button */
 
