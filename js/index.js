@@ -47,17 +47,17 @@ let best_time = 0;
 // Get the best moves and best time if present
 
 // Function for getting the best score from Local Storage if present.
-function getBestScores(bestMoves, bestTime){
-  if(localStorage.getItem(bestMoves)){
+function getBestScores(bestMoves, bestTime) {
+  if (localStorage.getItem(bestMoves)) {
     best_moves = localStorage.getItem(bestMoves);
   }
-  if(localStorage.getItem(bestTime)){
+  if (localStorage.getItem(bestTime)) {
     best_time = localStorage.getItem(bestTime);
   }
 }
 
 //Function for setting the best score to localStorage
-function setBestScores(bestMoves, bestTime){
+function setBestScores(bestMoves, bestTime) {
   localStorage.setItem(bestMoves, best_moves);
   localStorage.setItem(bestTime, best_time);
 }
@@ -281,27 +281,27 @@ function noMatch() {
   starRating();
 }
 
-function calculateBestScores(bestMoves, bestTime){
+function calculateBestScores(bestMoves, bestTime) {
   let total_time = minutes * 60 + seconds;
   best_moves = 0;
   best_time = 0;
   // When The browser has no best moves, or no best time
   getBestScores(bestMoves, bestTime);
-  if(best_moves==0 || best_time==0){
-      best_moves = moves;
-      best_time = total_time;
-  }
-  else{
-      // If best move and best time are found compare the lowest best time and best move
-      best_moves = Math.min(best_moves, moves);
-      best_time = Math.min(best_time, total_time);
+  if (best_moves == 0 || best_time == 0) {
+    best_moves = moves;
+    best_time = total_time;
+  } else {
+    // If best move and best time are found compare the lowest best time and best move
+    best_moves = Math.min(best_moves, moves);
+    best_time = Math.min(best_time, total_time);
   }
   setBestScores(bestMoves, bestTime);
 }
 
 function AddStats() {
   // Access the modal content div
-  const stats = document.getElementById("win-modal-content");
+
+  const details = document.getElementById("modal-details");
   // Create three different paragraphs
   for (let i = 1; i <= 3; i++) {
     // Create a new Paragraph
@@ -309,22 +309,22 @@ function AddStats() {
     // Add a class to the new Paragraph
     statsElement.classList.add("stats");
     // Add the new created <p> tag to the modal content
-    stats.appendChild(statsElement);
+    details.appendChild(statsElement);
   }
+
   // Select all p tags with the class of stats and update the content
-  let p = stats.querySelectorAll("p.stats");
+  let p = details.querySelectorAll("p.stats");
   // Set the new <p> to have the content of stats (time, moves and star rating)
 
   // Get the best minutes and seconds from total time
-  let best_minute = Math.floor(best_time/60);
-  let best_second = best_time % 60;     
+  let best_minute = Math.floor(best_time / 60);
+  let best_second = best_time % 60;
   // Set the new <p> to have the content of stats (time, moves and star rating)
-  
+
   p[0].innerHTML = `Time taken: ${minutes} Minutes and ${seconds} Seconds (Best Time: ${best_minute} Minutes and ${best_second} Seconds)`;
   p[1].innerHTML = `Moves Taken: ${moves} (Best Moves: ${best_moves})`;
   p[2].innerHTML = `Your Star Rating is: ${starCount}/3`;
 }
-
 function displayModal() {
   // Access the modal <span> element (x) that closes the modal
   const modalClose = document.getElementsByClassName("close")[0];
@@ -350,13 +350,11 @@ function winGame() {
 
   if (matched.length === len) {
     stopTime();
-    if(gameMode === "hard"){
+    if (gameMode === "hard") {
       calculateBestScores("bestMovesHard", "bestTimeHard");
-    }
-    else if(gameMode === "medium"){
+    } else if (gameMode === "medium") {
       calculateBestScores("bestMovesMedium", "bestTimeMedium");
-    }
-    else{
+    } else {
       calculateBestScores("bestMovesEasy", "bestTimeEasy");
     }
     AddStats();
