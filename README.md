@@ -1,4 +1,4 @@
-## 🃏 Card Flip Game.
+## 🃏 Card Flip Game
 
 **[Memory game]( https://anshika1806.github.io/CardFlip_Game/) is an interesting and intuitive game for all ages. This take on the classic Concentration-style game will entertain and delight you.** 
 
